@@ -99,7 +99,7 @@ const Rewards = () => {
   }
 
   return (
-    <div className="rewards-container">
+    <div className="rewards-container challenges-dashboard">
       <Header />
       <div className="rewards-content">
         <Navbar />

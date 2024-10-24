@@ -515,7 +515,7 @@ const ChallengesDashboard = ({
       };
     }
   };
-
+ 
   const groupedChallenges = processAndGroupChallenges();  
 
   return (
