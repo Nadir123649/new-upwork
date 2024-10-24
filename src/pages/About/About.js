@@ -11,7 +11,7 @@ const About = () => {
   return (
     <div className="about-container">
       <Header />
-      <div className="about-content">
+      <div className="about-content challenges-dashboards ">
         <Navbar />
         <div className="about-main">
           <section className="about-header">

@@ -35,9 +35,9 @@ const Refer = () => {
   return (
     <div className="refer-container">
       <Header />
-      <div className="refer-content">
+      <div className="refer-content challenges-dashboard refer-star">
         <Navbar />
-        <div className="refer-main">
+        <div className="refer-main ">
           <section className="refer-header">
             <h1>Refer Friends & Earn Rewards</h1>
           </section>

@@ -8,13 +8,13 @@ import Research from '../Research/Research';
 import Invest from '../Invest/Invest';
 import Monitor from '../Monitor/Monitor';
 import { API_ENDPOINTS } from '../../config/api';
-import { 
-  FaSearch, 
-  FaChartLine, 
-  FaCoins, 
-  FaChartBar, 
-  FaWallet, 
-  FaClock 
+import {
+  FaSearch,
+  FaChartLine,
+  FaCoins,
+  FaChartBar,
+  FaWallet,
+  FaClock
 } from 'react-icons/fa';
 
 const Rewards = () => {
@@ -54,7 +54,7 @@ const Rewards = () => {
         axios.get(`${API_ENDPOINTS.USER_POINTS}/${id}`),
         axios.get(`${API_ENDPOINTS.USER_INVESTMENTS}/${id}`)
       ]);
-      
+
       setCurrentPoints(pointsResponse.data.currentPoints);
       setLifetimePoints(pointsResponse.data.lifetimePoints);
       setInvestmentBalance(investmentResponse.data.balance);
@@ -99,9 +99,9 @@ const Rewards = () => {
   }
 
   return (
-    <div className="rewards-container challenges-dashboard">
+    <div className="rewards-container">
       <Header />
-      <div className="rewards-content">
+      <div className="rewards-content challenges-dashboards challenges-leader">
         <Navbar />
         <div className="rewards-main">
           <section className="rewards-header">
@@ -118,7 +118,7 @@ const Rewards = () => {
                 <span className="metric-value">{currentPoints.toLocaleString()}</span>
               </div>
             </div>
-            
+
             <div className="metric-card">
               <div className="metric-icon">
                 <FaClock />
@@ -128,7 +128,7 @@ const Rewards = () => {
                 <span className="metric-value">{lifetimePoints.toLocaleString()}</span>
               </div>
             </div>
-            
+
             <div className="metric-card">
               <div className="metric-icon">
                 <FaWallet />
@@ -142,7 +142,7 @@ const Rewards = () => {
 
           <section className="rewards-description">
             <p>
-              Explore Catholic AI Research and Stock Market Investing through our AI agent. 
+              Explore Catholic AI Research and Stock Market Investing through our AI agent.
               Convert the points you earn into Catholic aligned AI investments.
             </p>
           </section>
@@ -168,26 +168,26 @@ const Rewards = () => {
 
           <section className="research-invest-section">
             <div className="tab-buttons">
-              <button 
-                onClick={() => setActiveTab('research')} 
+              <button
+                onClick={() => setActiveTab('research')}
                 className={activeTab === 'research' ? 'active' : ''}
               >
                 <FaSearch /> Research
               </button>
-              <button 
-                onClick={() => setActiveTab('invest')} 
+              <button
+                onClick={() => setActiveTab('invest')}
                 className={activeTab === 'invest' ? 'active' : ''}
               >
                 <FaChartLine /> Invest
               </button>
-              <button 
-                onClick={() => setActiveTab('monitor')} 
+              <button
+                onClick={() => setActiveTab('monitor')}
                 className={activeTab === 'monitor' ? 'active' : ''}
               >
                 <FaChartBar /> Monitor
               </button>
             </div>
-            
+
             <div className="tab-content">
               {activeTab === 'research' && (
                 <div className="tab-pane">

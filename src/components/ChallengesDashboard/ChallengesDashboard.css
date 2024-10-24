@@ -22,6 +22,28 @@
   background-color: var(--background-color);
 }
 
+.challenges-dashboards {
+  max-width: 1200px;
+  margin: 0 auto 0 130px;
+  height: 100%;
+  padding: 24px;
+
+}
+.challenges-leader{
+  margin: 0 auto 0 190px; 
+}
+
+.challenges-stars {
+  width: calc(100% - 200px) !important;
+  max-width: 100% !important;
+  margin: 0;
+}
+
+.refer-star {
+  width: calc(100% - 200px) !important;
+  margin-right: 340px;
+}
+
 /* Challenge Card Styles */
 .challenge-card {
   background: var(--card-background);
@@ -301,8 +323,13 @@
 
 /* Loading Animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .fa-spin {
@@ -330,10 +357,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px; /* keeps the icon and text nicely spaced */
+  gap: 12px;
+  /* keeps the icon and text nicely spaced */
 }
 
 .empty-challenges-message {
   text-align: center;
-  margin: 20px auto; /* adds some vertical spacing and centers horizontally */
+  margin: 20px auto;
+  /* adds some vertical spacing and centers horizontally */
 }
