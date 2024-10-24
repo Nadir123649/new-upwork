@@ -1,0 +1,152 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.profile-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding-top: 60px; /* Adjust this value based on your Header height */
+}
+
+.profile-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+.profile-title {
+  color: #00b250;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-input label {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.label-input textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.label-input textarea:focus {
+  border-color: #00b250;
+  outline: none;
+}
+
+.profile-update-btn {
+  background-color: #00b250;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  align-self: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.profile-update-btn:hover {
+  background-color: #007a3d;
+  transform: translateY(-2px);
+}
+
+.profile-update-btn:active {
+  transform: translateY(0);
+}
+
+.profile-update-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .profile-form {
+    padding: 15px;
+  }
+  
+  .profile-title {
+    font-size: 20px;
+  }
+  
+  .label-input textarea {
+    height: 100px;
+  }
+
+  .profile-content {
+    padding-top: 50px; /* Adjust for smaller screens if needed */
+  }
+}
+
+
+
+.faith-journey-summary {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faith-journey-summary h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.faith-journey-summary h3 {
+  color: #34495e;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.faith-journey-summary ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.faith-journey-summary li {
+  margin-bottom: 5px;
+}
+
+.faith-journey-summary strong {
+  font-weight: 600;
+  color: #2980b9;
+}

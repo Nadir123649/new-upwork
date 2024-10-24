@@ -1,0 +1,76 @@
+.personal-goals {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.personal-goals form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.personal-goals input[type="text"],
+.personal-goals select,
+.personal-goals textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.personal-goals button {
+  background-color: #00b250;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.personal-goals button:hover {
+  background-color: #009040;
+}
+
+.goals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.goal-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.goal-card h3 {
+  margin-top: 0;
+  color: #00b250;
+}
+
+.goal-card input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.goal-card span {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.goal-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.goal-card li {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f4f8;
+  border-radius: 3px;
+}

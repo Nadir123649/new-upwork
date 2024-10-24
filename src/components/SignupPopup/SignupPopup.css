@@ -1,0 +1,44 @@
+.signup-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.signup-popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.signup-popup h2 {
+  color: #00b250;
+  margin-bottom: 10px;
+}
+
+.signup-popup p {
+  margin-bottom: 20px;
+}
+
+.signup-popup-close {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.signup-popup-close:hover {
+  background-color: #e0e0e0;
+}

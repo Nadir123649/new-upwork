@@ -1,0 +1,339 @@
+/* Main Dashboard Styles */
+:root {
+  --primary-color: #00b250;
+  --secondary-color: #009040;
+  --accent-color: #4a90e2;
+  --text-color: #333333;
+  --background-color: #f5f7fa;
+  --card-background: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --gradient-start: #00b250;
+  --gradient-end: #4a90e2;
+  --soft-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+.challenges-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: var(--background-color);
+}
+
+/* Challenge Card Styles */
+.challenge-card {
+  background: var(--card-background);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--soft-shadow);
+  transition: all var(--transition-speed) ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.challenge-card:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* Expanded Details Section */
+.challenge-details {
+  margin-top: 24px;
+  background: var(--background-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.period-prompt {
+  background: white;
+  margin: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.period-prompt h5 {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(0, 178, 80, 0.1);
+}
+
+/* Enhanced Reflections Section */
+.weekly-reflections {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.reflections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(74, 144, 226, 0.1);
+}
+
+.reflections-header h6 {
+  font-size: 16px;
+  color: var(--accent-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.toggle-reflections-button {
+  background: white;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.toggle-reflections-button:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Individual Reflection Entry */
+.reflection-entry {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(74, 144, 226, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.reflection-entry:hover {
+  transform: translateX(4px);
+}
+
+.reflection-date {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.reflection-text {
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* New Reflection Input Section */
+.new-reflection-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(0, 178, 80, 0.1);
+}
+
+.reflection-input {
+  width: 100%;
+  min-height: 120px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  resize: vertical;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+}
+
+.reflection-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  background: white;
+}
+
+/* Enhanced Buttons */
+.expand-button {
+  width: 100%;
+  background: #f8fafc;
+  color: var(--text-color);
+  border: 1px solid #e2e8f0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+}
+
+.expand-button:hover {
+  background: white;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.check-in-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.check-in-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.check-in-button.additional-reflection {
+  background: var(--accent-color);
+}
+
+.check-in-button.additional-reflection:hover {
+  background: #3b82f6;
+}
+
+/* Progress Indicators */
+.challenge-progress {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Category Headers */
+.category-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(0, 178, 80, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .challenges-dashboard {
+    padding: 16px;
+  }
+
+  .period-prompt {
+    margin: 12px;
+    padding: 16px;
+  }
+
+  .reflection-entry {
+    padding: 14px;
+  }
+
+  .category-section h3 {
+    font-size: 20px;
+  }
+
+  .check-in-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reflections-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .toggle-reflections-button {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .reflection-entry {
+    padding: 12px;
+  }
+
+  .reflection-text {
+    font-size: 14px;
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fa-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+
+.dashboard-header {
+  text-align: center;
+}
+
+.dashboard-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* keeps the icon and text nicely spaced */
+}
+
+.empty-challenges-message {
+  text-align: center;
+  margin: 20px auto; /* adds some vertical spacing and centers horizontally */
+}

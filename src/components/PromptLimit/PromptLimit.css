@@ -1,0 +1,50 @@
+.prompt-limit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.prompt-limit-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.prompt-limit-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prompt-limit-content h2 {
+  color: #00b250;
+  margin-bottom: 15px;
+}
+
+.prompt-limit-content p {
+  margin-bottom: 15px;
+}
+
+.prompt-limit-content a {
+  color: #00b250;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.prompt-limit-content a:hover {
+  text-decoration: underline;
+}

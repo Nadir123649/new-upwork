@@ -1,0 +1,270 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 200px;
+  margin-top: 60px;
+}
+
+.about-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f4f7fa;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.about-header h1 {
+  color: #2c3e50;
+  font-size: 32px;
+  margin: 0;
+}
+
+.about-description {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  border-top: 3px solid #00b250;
+  border-bottom: 3px solid #00b250;
+}
+
+.about-description p {
+  color: #2c3e50;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-section {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-section h2 {
+  color: #00b250;
+  font-size: 26px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-section h3 {
+  color: #2c3e50;
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.about-section p, .about-section ul, .about-section ol {
+  color: #34495e;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.about-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.about-column {
+  flex: 1;
+}
+
+.research-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.research-box {
+  background-color: #fff;
+  border: 2px solid #00b250;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.research-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  background-color: #f0fff0;
+}
+
+.research-box h4 {
+  color: #00b250;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.research-box p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.contact-section {
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #00b250;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+}
+
+.events-section {
+  margin-bottom: 40px;
+}
+
+.section-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.event-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.event-image {
+  width: 40%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .about-content {
+    margin-left: 0;
+  }
+  
+  .about-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-grid {
+    flex-direction: column;
+  }
+
+  .research-links {
+    flex-direction: column;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-section {
+    padding: 20px;
+  }
+
+  .event-content {
+    flex-direction: column;
+  }
+
+  .event-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h1 {
+    font-size: 24px;
+  }
+
+  .about-description p {
+    font-size: 14px;
+  }
+
+  .about-section h2 {
+    font-size: 22px;
+  }
+
+  .about-section h3 {
+    font-size: 18px;
+  }
+}

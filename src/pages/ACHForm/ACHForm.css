@@ -1,0 +1,77 @@
+.ach-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.ach-form-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ach-form-container {
+  display: flex;
+  flex: 1;
+}
+
+.ach-form-main {
+  flex: 1;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+}
+
+.ach-form h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+}
+
+.ach-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ach-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+}
+
+.ach-form input[type='text'],
+.ach-form select {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.ach-form input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+
+.ach-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #4c51bf;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: flex-end;
+  transition: background-color 0.3s;
+}
+
+.ach-form button:hover {
+  background-color: #434190;
+}

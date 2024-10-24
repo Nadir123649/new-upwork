@@ -1,0 +1,36 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-height: calc(var(--vh) * 100);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  margin-left: var(--navbar-width);
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc((var(--vh) * 100) - var(--header-height));
+}
+
+/* Add responsive breakpoints */
+@media (max-width: 768px) {
+  .app-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* iOS Safari fix */
+/* @supports (-webkit-touch-callout: none) {
+
+  .app,
+  .app-content {
+    min-height: -webkit-fill-available;
+  }
+} */

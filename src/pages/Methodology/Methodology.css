@@ -1,0 +1,329 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.methodology-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.methodology-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 200px; /* Account for navbar width */
+  margin-top: 60px; /* Account for header height */
+}
+
+.methodology-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.methodology-section {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.methodology-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.methodology-section h1 {
+  color: #00b250;
+  font-size: 32px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #00b250;
+  padding-bottom: 10px;
+}
+
+.methodology-section h2 {
+  color: #333;
+  font-size: 26px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.methodology-section h3 {
+  color: #00b250;
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.methodology-section h4 {
+  color: #555;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.methodology-section p, .methodology-section ul, .methodology-section ol {
+  color: #555;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.methodology-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.methodology-column {
+  flex: 1;
+}
+
+.formula {
+  background-color: #f1f8ff;
+  border-left: 4px solid #00b250;
+  padding: 15px;
+  margin: 20px 0;
+  font-family: monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .methodology-content {
+    margin-left: 0; /* Remove navbar margin on small screens */
+  }
+
+  .methodology-main {
+    padding: 20px;
+  }
+
+  .methodology-grid {
+    flex-direction: column;
+  }
+
+  .methodology-section {
+    padding: 20px;
+  }
+}
+
+/* Ensure consistent styling with the chat page */
+.chat-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.chat-navbar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  z-index: 999;
+}
+
+
+.ai-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.ai-category {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ai-category h4 {
+  color: #00b250;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.ai-category ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.ai-category li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .ai-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.symbol-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.symbol-item {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.symbol {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #00b250;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #555;
+}
+
+.peer-group-list {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.peer-group-list li {
+  margin-bottom: 10px;
+  break-inside: avoid-column;
+}
+
+@media (max-width: 768px) {
+  .peer-group-list {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
+
+.subsection {
+  margin-bottom: 40px;
+}
+
+.subsection h3 {
+  border-bottom: 2px solid #00b250;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.welcome-section {
+  background-color: #f8f9fa;
+  border-left: 5px solid #00b250;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.welcome-text p {
+  margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+  color: #00b250;
+  font-size: 32px;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+
+
+
+/* ... (previous styles remain unchanged) */
+
+.historical-data-section {
+  background-color: #f8f9fa;
+  border-left: 5px solid #00b250;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.query-form {
+  margin-top: 20px;
+}
+
+.query-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.query-form button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00b250;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.query-form button:hover {
+  background-color: #009040;
+}
+
+.query-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00b250;
+}
+
+.login-message {
+  margin-top: 20px;
+  font-style: italic;
+  color: #555;
+}
+
+.login-message a {
+  color: #00b250;
+  text-decoration: none;
+}
+
+.login-message a:hover {
+  text-decoration: underline;
+}

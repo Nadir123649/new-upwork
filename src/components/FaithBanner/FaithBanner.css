@@ -1,0 +1,124 @@
+.faith-banner {
+  background-color: #f0f8ff; /* Matching the assessment modal blue tone */
+  border-bottom: 1px solid #d0e3f7;
+  padding: 20px;
+  position: fixed;
+  top: 60px; /* Account for header height */
+  left: 200px; /* Account for navbar width */
+  width: calc(100% - 200px); /* Full width minus navbar width */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.faith-banner.closing {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.faith-banner-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faith-banner-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.faith-banner h2 {
+  color: #00b250;
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.faith-banner p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.faith-banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.faith-banner-button {
+  background-color: #00b250;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+  font-size: 14px;
+}
+
+.faith-banner-button:hover {
+  background-color: #009040;
+  transform: translateY(-1px);
+}
+
+.faith-banner-link {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.faith-banner-link:hover {
+  color: #00b250;
+}
+
+.faith-banner-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.faith-banner-close:hover {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .faith-banner {
+    left: 0;
+    width: 100%;
+    top: 0; /* Adjust for mobile header */
+  }
+
+  .faith-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .faith-banner-text {
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .faith-banner-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}

@@ -1,0 +1,421 @@
+.group-directory-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.group-directory-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 200px;
+  margin-top: 60px;
+}
+
+.group-directory-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f4f7fa;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.group-directory-main h2 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.group-directory-main h2 svg {
+  margin-right: 10px;
+}
+
+/* Header and Controls */
+.directory-header {
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.directory-description {
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.create-group-button {
+  background-color: #00b250;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.create-group-button:hover {
+  background-color: #009040;
+}
+
+.create-group-button svg {
+  margin-right: 8px;
+}
+
+/* Group Cards Grid */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.group-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.group-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.group-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.group-card h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin: 0;
+}
+
+.group-description {
+  color: #34495e;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  min-height: 42px;
+}
+
+/* Status Badges */
+.group-status {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.member-badge,
+.admin-badge,
+.public-badge,
+.private-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.member-badge {
+  background-color: #ecfdf5;
+  color: #00b250;
+}
+
+.admin-badge {
+  background-color: #eff6ff;
+  color: #3498db;
+}
+
+.public-badge {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.private-badge {
+  background-color: #fef2f2;
+  color: #e74c3c;
+}
+
+/* Group Actions */
+.group-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.join-button,
+.view-button,
+.admin-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.join-button {
+  background-color: #00b250;
+  color: white;
+  border: none;
+}
+
+.join-button:hover {
+  background-color: #009040;
+}
+
+.join-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.view-button {
+  background-color: white;
+  color: #34495e;
+  border: 1px solid #ddd;
+}
+
+.view-button:hover {
+  background-color: #f8f9fa;
+}
+
+.admin-button {
+  background-color: #eff6ff;
+  color: #3498db;
+  border: 1px solid #bfdbfe;
+  text-decoration: none;
+}
+
+.admin-button:hover {
+  background-color: #dbeafe;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.modal h3 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.modal textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal button[type="submit"],
+.modal .create-button {
+  background-color: #00b250;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.modal button[type="submit"]:hover,
+.modal .create-button:hover {
+  background-color: #009040;
+}
+
+.modal .cancel-button {
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.modal .cancel-button:hover {
+  background-color: #d1d5db;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #7f8c8d;
+}
+
+.icon-spin {
+  animation: spin 1s linear infinite;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.error-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.error-message {
+  color: #dc2626;
+  margin-bottom: 16px;
+}
+
+.retry-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .group-directory-content {
+    margin-left: 0;
+  }
+  
+  .group-directory-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .groups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .group-actions {
+    flex-direction: column;
+  }
+
+  .join-button,
+  .view-button,
+  .admin-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .group-directory-main h2 {
+    font-size: 24px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .create-group-button {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .group-card {
+    padding: 15px;
+  }
+
+  .group-card h3 {
+    font-size: 18px;
+  }
+}

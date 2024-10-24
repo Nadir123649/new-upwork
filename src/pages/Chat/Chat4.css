@@ -1,0 +1,877 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.chat-messages-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: calc(100vh - 60px - 80px); /* Adjust based on your header and form heights */
+  padding-bottom: 20px;
+}
+
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 20px;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.message-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #00b250;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.message-icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.user-icon {
+  background-color: #f1f1f1;
+  font-size: 24px;
+}
+
+.message-content {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  word-wrap: break-word;
+}
+
+.message.user .message-content {
+  background-color: #00b250;
+  color: #fff;
+}
+
+
+.chat-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 200px; /* Width of the navbar */
+  margin-top: 60px; /* Height of the header */
+  background-color: #fff;
+  width: calc(100% - 200px); /* Adjust for navbar width */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  padding-bottom: 120px; /* Increased to account for chat form */
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.chat-form {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 200px); /* Adjust for navbar width */
+  position: fixed;
+  bottom: 0;
+  left: 200px; /* Align with navbar */
+  right: 0;
+  box-sizing: border-box;
+  z-index: 98; /* Ensure it's above most content but below navbar */
+}
+
+
+
+
+.chat-form-inner {
+  display: flex;
+  width: 100%;
+  max-width: 80%; /* Match chat-messages max-width */
+}
+
+.chat-form textarea {
+  flex: 1;
+  padding: 15px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  resize: none;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.chat-form textarea:focus {
+  outline: none;
+  border-color: #00b250;
+}
+
+.chat-form button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #00b250;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.chat-form button:hover {
+  background-color: #007a3d;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  color: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.message-content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.message-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.message-content li {
+  margin-bottom: 5px;
+}
+
+.message-content p {
+  margin-bottom: 10px;
+}
+
+
+
+
+/* Shared styles for both report types */
+.equity-report,
+.ai-initiative-report {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.equity-report h2,
+.equity-report h3,
+.equity-report h4,
+.equity-report strong,
+.ai-initiative-report h2,
+.ai-initiative-report h3,
+.ai-initiative-report h4,
+.ai-initiative-report strong {
+  color: #333333;
+}
+
+.equity-report h2,
+.ai-initiative-report h2 {
+  font-size: 24px;
+  border-bottom: 2px solid #00b250;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+.equity-report h3,
+.ai-initiative-report h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.equity-report h4,
+.ai-initiative-report h4 {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.equity-report ul,
+.ai-initiative-report ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.equity-report ul li,
+.ai-initiative-report ul li {
+  margin-bottom: 10px;
+}
+
+.equity-report ul ul,
+.ai-initiative-report ul ul {
+  padding-left: 20px;
+}
+
+.equity-report ul ul li:before,
+.ai-initiative-report ul ul li:before {
+  content: "•";
+  color: #0033a0;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.equity-report p,
+.ai-initiative-report p {
+  margin-bottom: 15px;
+}
+
+/* Specific styles for ai-initiative-report */
+.ai-initiative-report h1 {
+  color: #0033a0;
+  border-bottom: 2px solid #0033a0;
+  padding-bottom: 10px;
+}
+
+/* Table styles for both report types */
+.equity-report table,
+.ai-initiative-report table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.equity-report th,
+.equity-report td,
+.ai-initiative-report th,
+.ai-initiative-report td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.equity-report th,
+.ai-initiative-report th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+
+
+.sample-prompts {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 60px 0; /* Increased bottom margin */
+  width: 100%;
+}
+
+.sample-prompt {
+  flex: 1;
+  margin: 0 10px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sample-prompt:hover {
+  background-color: #e9ecef;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.sample-prompt-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.sample-prompt-text {
+  color: #6c757d;
+}
+
+.default-message {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  border-left: 4px solid #00b250;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.default-message p {
+  margin: 0;
+}
+
+.default-message strong {
+  color: #00b250;
+}
+
+@media (max-width: 1600px) {
+  .chat-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .chat-form {
+    left: 200px;
+    width: calc(100% - 200px);
+  }
+
+  .chat-form-inner {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .chat-container {
+    margin-left: 0;
+    width: 100%;
+
+  }
+  
+  
+  .chat-main {
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 140px; /* Increased for mobile */
+  }
+
+  .chat-messages-wrapper {
+    max-width: 100%;
+  }
+
+  .chat-form {
+    left: 0;
+    width: 100%;
+  }
+
+  .chat-form-inner {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sample-prompts {
+    flex-direction: column;
+    margin-bottom: 80px; /* Increased for mobile */
+  }
+
+  .sample-prompt {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .chat-form-inner {
+    flex-direction: column;
+  }
+
+  .chat-form textarea {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .chat-form button {
+    width: 100%;
+  }
+}
+
+
+
+
+.report-content {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.equity-report,
+.portfolio-construction-report {
+  composes: report-content;
+}
+
+.report-content h2,
+.report-content h3,
+.report-content h4,
+.report-content strong {
+  color: #00b250;
+  font-weight: 600;
+}
+
+.report-content h2 {
+  font-size: 28px;
+  border-bottom: 2px solid #00b250;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.report-content h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.report-content h4 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.report-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.report-content ul li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.report-content ul li::before {
+  content: "•";
+  color: #00b250;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  position: absolute;
+  left: 0;
+}
+
+.report-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+
+
+.report-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+.report-content th,
+.report-content td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 15px;
+  text-align: left;
+  min-width: 100px; /* Adjust this value as needed */
+}
+
+.report-content th {
+  background-color: #00b250;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.report-content tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.report-content tr:hover {
+  background-color: #e6f7ee;
+}
+
+
+
+
+.report-content strong {
+  color: #00b250;
+}
+
+.report-content .highlight {
+  background-color: #e6f7ee;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+
+
+.report-content .chart {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+@media print {
+  .report-content {
+    box-shadow: none;
+    max-width: none;
+  }
+}
+
+/* Small-screen (responsive) CSS */
+@media (max-width: 768px) {
+  .report-content {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .report-content h2 {
+    font-size: 24px;
+  }
+
+  .report-content h3 {
+    font-size: 20px;
+  }
+
+  .report-content h4 {
+    font-size: 16px;
+  }
+
+  .report-content table {
+    font-size: 12px;
+  }
+
+  .report-content th,
+  .report-content td {
+    padding: 8px 10px;
+    min-width: 80px; /* Adjust this value for mobile */
+  }
+
+  .chat-container {
+    margin-left: 0;
+  }
+  
+  .chat-main {
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 140px;
+  }
+  
+  .chat-messages-wrapper {
+    max-width: 100%;
+  }
+
+  .chat-form {
+    left: 0;
+    width: 100%;
+  }
+
+  .chat-form-inner {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sample-prompts {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+
+  .sample-prompt {
+    margin-bottom: 20px;
+  }
+
+  .chat-form-inner {
+    flex-direction: column;
+  }
+
+  .chat-form textarea {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .chat-form button {
+    width: 100%;
+  }
+}
+
+
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.facts-display {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.facts-display h3 {
+  color: #495057;
+  border-bottom: 2px solid #00b250;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.facts-display ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.facts-display li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.facts-display li:before {
+  content: "•";
+  color: #00b250;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Ensure the chart is displayed within the report */
+.ai-initiative-report .chart-container {
+  margin: 20px 0;
+  max-width: 100%;
+}
+
+
+.facts-popup {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.facts-popup h3 {
+  margin-top: 0;
+}
+
+.facts-popup ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.chart-container {
+  width: 100%;
+  min-height: 400px; /* Change from fixed height to min-height */
+  margin: 20px 0;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden; /* Add this to contain the chart */
+}
+
+
+
+
+
+.system-message {
+  background-color: #f8f9fa;
+  border-left: 4px solid #00b250;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.system-title {
+  color: #00b250;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.system-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.system-subtitle {
+  color: #333;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+.system-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.system-list li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.system-list li::before {
+  content: "•";
+  color: #00b250;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.system-list {
+  list-style-type: none !important;
+}
+
+.system-list li {
+  list-style-type: none !important;
+}
+
+.system-companies {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+
+
+
+
+
+.textarea-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+
+
+.chat-limit-info {
+  font-size: 10px;
+  color: #777;
+  margin-top: 2px;
+  text-align: right;
+}
+
+
+

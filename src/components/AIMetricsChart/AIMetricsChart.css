@@ -1,0 +1,15 @@
+/* AIMetricsChart.css */
+.ai-metrics-chart {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.ai-metrics-chart canvas {
+  max-width: 100%;
+  height: auto;
+}

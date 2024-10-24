@@ -1,0 +1,509 @@
+:root {
+  --primary-color: #00b250;
+  --secondary-color: #009040;
+  --text-color: #333333; /* Changed from white to dark */
+  --background-color: #f8f9fa; /* Changed from #1a1a1a to light grey */
+  --hover-color: rgba(255, 255, 255, 0.2);
+  --disabled-color: #a0a0a0;
+}
+
+.chat-navbar {
+  width: 200px;
+  background-color: var(--background-color);
+  padding: 0;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  flex-shrink: 0;
+  border-radius: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 60px); /* Adjust for header height */
+
+  position: fixed; /* Fix position */
+  top: 60px; /* Position below header */
+  left: 0;
+  z-index: 1002; /* Increased z-index to be above overlay */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.chat-navbar ul {
+  list-style-type: none;
+  padding: 20px 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+
+
+.chat-navbar li {
+  margin-bottom: 20px; /* Increased margin between items */
+}
+
+
+.chat-navbar a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-navbar a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chat-navbar a:hover::before {
+  opacity: 0.2;
+}
+
+.chat-navbar a span {
+  position: relative;
+  z-index: 1;
+}
+
+.chat-navbar a svg {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.chat-navbar a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-navbar a:hover svg {
+  transform: scale(1.1);
+}
+
+.chat-navbar a.disabled-link,
+.chat-navbar a.disabled-link:hover {
+  color: var(--disabled-color);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.chat-navbar a.disabled-link::before {
+  display: none;
+}
+
+
+.navbar-toggle {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  z-index: 1003;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-toggle::after,
+.navbar-toggle::before {
+  display: none; /* Prevent any pseudo-elements from showing */
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+
+.navbar-toggle span:last-child {
+  margin-bottom: 0;
+}
+
+.navbar-toggle span:first-child {
+  margin-top: 0;
+}
+
+
+
+
+/* Update the transform values for better alignment */
+.navbar-toggle.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+}
+
+
+
+
+
+
+.navbar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+.navbar-footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-top: auto; /* Push footer to bottom */
+}
+
+@media screen and (max-width: 768px) {
+  .chat-navbar {
+    transform: translateX(-100%) !important;
+    width: 80% !important;
+    max-width: 300px !important;
+    z-index: 1002 !important;
+  }
+  .chat-navbar.open {
+    transform: translateX(0) !important;
+  }
+  .navbar-toggle {
+    display: block !important;
+    z-index: 1003 !important;
+  }
+  .navbar-overlay {
+    display: none !important;
+    pointer-events: none !important;
+    z-index: 1001 !important;
+  }
+  .chat-navbar.open ~ .navbar-overlay {
+    display: block !important;
+    pointer-events: auto !important;
+  }
+  .chat-navbar ul {
+    padding: 0 !important;
+    align-items: center;
+    padding-top: 70px; /* Add padding to push items down */
+
+  }
+  .chat-navbar a {
+    color: var(--text-color) !important;
+    font-size: 18px !important;
+    padding: 10px !important;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px) !important;
+  }
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .navbar-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px) !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .chat-navbar {
+    transform: translateX(0);
+  }
+}
+
+.chat-navbar a.disabled-link {
+  color: var(--disabled-color);
+  cursor: not-allowed;
+  position: relative;
+}
+
+.chat-navbar a.disabled-link:hover::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 1;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .chat-navbar a.disabled-link:hover::after {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+.chat-navbar a svg {
+  margin-right: 10px;
+
+}
+
+/* The rest of your CSS remains unchanged */
+/* Full screen styles */
+.custom-swal-container {
+  z-index: 1100;
+}
+
+.custom-swal-popup {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.custom-swal-header {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.custom-swal-title {
+  color: #00b250;
+  font-size: 24px;
+}
+
+.custom-swal-close-button {
+  color: #00b250;
+}
+
+.custom-swal-content {
+  color: #333;
+  font-size: 16px;
+}
+
+.custom-swal-confirm-button {
+  background-color: #00b250 !important;
+}
+
+.custom-swal-cancel-button {
+  background-color: #d33 !important;
+}
+
+/* Small screen styles */
+@media screen and (max-width: 768px) {
+  .custom-swal-popup {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  .custom-swal-title {
+    font-size: 20px;
+  }
+
+  .custom-swal-content {
+    font-size: 14px;
+  }
+}
+
+/* Styles for the signup form in the popup */
+.swal2-popup .plan-info {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.swal2-popup .plan-info p {
+  color: #495057;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.swal2-popup .signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.swal2-popup .label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.swal2-popup .label-input label {
+  margin-bottom: 6px;
+  color: #343a40;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.swal2-popup .icon-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.swal2-popup .icon-input:focus-within {
+  border-color: #00b250;
+  box-shadow: 0 0 0 2px rgba(0, 178, 80, 0.1);
+}
+
+.swal2-popup .icon-input img {
+  margin: 0 12px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+.swal2-popup .icon-input input {
+  width: 100%;
+  padding: 12px 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #495057;
+}
+
+.swal2-popup .signup-submit-btn {
+  background-color: #00b250;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.swal2-popup .signup-submit-btn:hover {
+  background-color: #009a45;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.swal2-popup .error-msg {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.swal2-popup .required-field {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Custom styles for SweetAlert popup */
+.custom-swal-popup {
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.custom-swal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.custom-swal-content {
+  color: #495057;
+  font-size: 14px;
+}
+
+.custom-swal-close-button {
+  color: #6c757d;
+  transition: color 0.3s;
+}
+
+.custom-swal-close-button:hover {
+  color: #212529;
+}
+
+/* Responsive styles for the popup */
+@media screen and (max-width: 768px) {
+  .swal2-popup {
+    padding: 20px;
+  }
+
+  .swal2-popup .signup-form {
+    width: 100%;
+  }
+
+  .custom-swal-title {
+    font-size: 20px;
+  }
+}
+
+.chat-navbar ul li:first-child {
+  margin-top: 70px; /* Adjust this value as needed */
+}

@@ -1,0 +1,105 @@
+.chat-navbar {
+  width: 200px;
+  background-color: #00b250;
+  padding: 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 60px); /* Adjust for header height */
+  position: fixed; /* Fix position */
+  top: 60px; /* Position below header */
+  left: 0;
+  z-index: 99; /* Just below header z-index */
+}
+
+.chat-navbar li:first-child {
+  margin-top: 20px;
+}
+
+.chat-navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-navbar li {
+  margin-bottom: 15px;
+}
+
+.chat-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-navbar-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.connect-schwab-info {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  cursor: default;
+}
+
+.connect-schwab-info span {
+  display: block;
+}
+
+.connect-schwab-info span:first-child {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.connect-schwab-info span:last-child {
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.schwab-connected {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .chat-navbar {
+    transform: translateX(-100%);
+    height: calc(100vh - 60px); /* Full height minus header */
+  }
+
+  .chat-navbar.open {
+    transform: translateX(0);
+  }
+
+  .chat-navbar-toggle {
+    display: block;
+    position: fixed;
+    top: 70px; /* Position below header */
+    left: 10px;
+    z-index: 101;
+  }
+}
+
+@media (min-width: 769px) {
+  .chat-navbar {
+    transform: translateX(0);
+  }
+}

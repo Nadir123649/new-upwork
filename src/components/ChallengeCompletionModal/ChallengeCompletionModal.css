@@ -1,0 +1,76 @@
+.challenge-completion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  color: #00b250;
+  margin-bottom: 15px;
+}
+
+.new-challenges-section {
+  margin-top: 20px;
+}
+
+.challenge-option {
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button:first-child {
+  background-color: #00b250;
+  color: white;
+}
+
+.modal-actions button:first-child:hover {
+  background-color: #009040;
+}
+
+.modal-actions button:last-child {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.modal-actions button:last-child:hover {
+  background-color: #d0d0d0;
+}
+
+.challenge-progress {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}

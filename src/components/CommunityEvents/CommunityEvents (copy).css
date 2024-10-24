@@ -1,0 +1,251 @@
+:root {
+  --primary-color: #00b250;
+  --secondary-color: #009040;
+  --text-color: #333333;
+  --light-text-color: #666666;
+  --background-color: #f8f9fa;
+  --card-background: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.community-hub {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--background-color);
+}
+
+.community-hub h2 {
+  color: var(--primary-color);
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  padding: 25px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.event-card h3 {
+  color: var(--primary-color);
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.event-details {
+  margin-bottom: 20px;
+}
+
+.event-details p {
+  color: var(--text-color);
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-description {
+  color: var(--light-text-color);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.event-link:hover {
+  background-color: var(--secondary-color);
+}
+
+.admin-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle-form-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-form-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.new-event-form {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.new-event-form input[type="text"],
+.new-event-form input[type="datetime-local"],
+.new-event-form input[type="url"],
+.new-event-form textarea {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.new-event-form input[type="text"]:focus,
+.new-event-form input[type="datetime-local"]:focus,
+.new-event-form input[type="url"]:focus,
+.new-event-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.new-event-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .events-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .community-hub {
+    padding: 20px 15px;
+  }
+  
+  .event-card {
+    padding: 20px;
+  }
+
+  .community-hub h2 {
+    font-size: 28px;
+  }
+
+  .event-card h3 {
+    font-size: 20px;
+  }
+
+  .event-details p,
+  .event-description {
+    font-size: 14px;
+  }
+
+  .new-event-form {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .community-hub h2 {
+    font-size: 24px;
+  }
+
+  .event-card h3 {
+    font-size: 18px;
+  }
+
+  .event-details p,
+  .event-description,
+  .new-event-form input[type="text"],
+  .new-event-form input[type="datetime-local"],
+  .new-event-form input[type="url"],
+  .new-event-form textarea,
+  .checkbox-label,
+  .submit-button {
+    font-size: 14px;
+  }
+
+  .toggle-form-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
