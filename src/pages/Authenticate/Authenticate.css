@@ -135,4 +135,5 @@ body, html {
   bottom: 0;
   width: 200px;
   z-index: 999;
+  min-height: 100%;
 }

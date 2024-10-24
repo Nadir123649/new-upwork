@@ -41,8 +41,15 @@ function App() {
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
 
+    const setZoom = () => {
+      document.body.style.width = '133.3%';
+      document.body.style.zoom = 0.75;
+      document.body.style.overflow = 'auto'
+    }
+
     // Set initial viewport height
     setViewportHeight();
+    setZoom();
 
     // Update on resize events
     const handleResize = () => {
